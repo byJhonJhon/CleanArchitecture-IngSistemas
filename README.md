@@ -35,11 +35,6 @@ El patrón **Repository** actúa como una capa de abstracción entre la lógica 
 
 La conexión sigue los principios de **Clean Architecture** y **Dependency Inversion**:
 
-### Flujo de Conexión:
-
-┌─────────────────────────────────────────────────────────────┐ │  CAPA DE APLICACIÓN (Application Layer)                     │ │  ┌────────────────────────────────────────────────────┐    │ │  │  Interfaces (Contratos)                            │    │ │  │  - IExistenciaRepository                           │    │ │  │  - IProductoRepository                             │    │ │  │  - IRepositoryBase<T>                              │    │ │  └────────────────────────────────────────────────────┘    │ └─────────────────────────────────────────────────────────────┘ ▲ │ (depende de la abstracción) │ ┌─────────────────────────────────────────────────────────────┐ │  CAPA DE INFRAESTRUCTURA (Infrastructure Layer)             │ │  ┌────────────────────────────────────────────────────┐    │ │  │  Implementaciones Concretas                        │    │ │  │  - ExistenciaRepository : IExistenciaRepository    │    │ │  │  - ProductoRepository : IProductoRepository        │    │ │  │  - RepositoryBase<T> : IRepositoryBase<T>          │    │ │  └────────────────────────────────────────────────────┘    │ │                            ▲                                │ │                            │                                │ │  ┌────────────────────────────────────────────────────┐    │ │  │  ApplicationDbContext (Entity Framework Core)      │    │ │  └────────────────────────────────────────────────────┘    │ └─────────────────────────────────────────────────────────────┘  
-
-
 ### Pasos de la conexión:
 
 1. **Definición de interfaces**: Las interfaces se definen en la capa de `Application` (ejemplo: `IProductoRepository`), estableciendo el contrato sin implementación.
