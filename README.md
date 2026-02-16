@@ -13,14 +13,14 @@ El patrón **Repository** actúa como una capa de abstracción entre la lógica 
 
 ### Archivos Creados
 
-**Interfaces en la capa Application** (`CleanArchitecture.Application\Interface\`):
+**Interfaces en la capa Application**:
 - `IExistenciaRepository.cs`
 - `IUnidadMedidaRepository.cs`
 - `IMovimientoInventarioRepository.cs`
 - `IProductoRepository.cs`
 - `IProveedorRepository.cs`
 
-**Implementaciones en la capa Infrastructure** (`CleanArchitecture.Infrastructure\Data\Repositories\`):
+**Implementaciones en la capa Infrastructure**:
 - `ExistenciaRepository.cs`
 - `UnidadMedidaRepository.cs`
 - `MovimientoInventarioRepository.cs`
