@@ -37,27 +37,7 @@ La conexión sigue los principios de **Clean Architecture** y **Dependency Inver
 
 ### Flujo de Conexión:
 
-CAPA DE APPLICATION
-          |
-Interfaces (Contratos)
-- IExistenciaRepository
-- IProductoRepository
-- IRepositoryBase<T>
-          |
-          |
-(depende de la abstracción)
-          |
-          |
- CAPA DE INFRAESTRUCTURA
-          |
-Implementaciones Concretas 
-- ExistenciaRepository : IExistenciaRepository
-- ProductoRepository : IProductoRepository
-- RepositoryBase<T> : IRepositoryBase<T>
-          |  
-          │
-          |
-ApplicationDbContext (Entity Framework Core)    
+┌─────────────────────────────────────────────────────────────┐ │  CAPA DE APLICACIÓN (Application Layer)                     │ │  ┌────────────────────────────────────────────────────┐    │ │  │  Interfaces (Contratos)                            │    │ │  │  - IExistenciaRepository                           │    │ │  │  - IProductoRepository                             │    │ │  │  - IRepositoryBase<T>                              │    │ │  └────────────────────────────────────────────────────┘    │ └─────────────────────────────────────────────────────────────┘ ▲ │ (depende de la abstracción) │ ┌─────────────────────────────────────────────────────────────┐ │  CAPA DE INFRAESTRUCTURA (Infrastructure Layer)             │ │  ┌────────────────────────────────────────────────────┐    │ │  │  Implementaciones Concretas                        │    │ │  │  - ExistenciaRepository : IExistenciaRepository    │    │ │  │  - ProductoRepository : IProductoRepository        │    │ │  │  - RepositoryBase<T> : IRepositoryBase<T>          │    │ │  └────────────────────────────────────────────────────┘    │ │                            ▲                                │ │                            │                                │ │  ┌────────────────────────────────────────────────────┐    │ │  │  ApplicationDbContext (Entity Framework Core)      │    │ │  └────────────────────────────────────────────────────┘    │ └─────────────────────────────────────────────────────────────┘  
 
 
 ### Pasos de la conexión:
